@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
 
   def new 
     if params[:back]
-      @blog = Blog.new(params[:back])
+      @blog = Blog.new(blogs_params)
     else
       @blog = Blog.new
     end
@@ -25,11 +25,10 @@ class BlogsController < ApplicationController
   end
 
   def edit
-# @blog = Blog.find(params[:id])
-end
+  end
 
 def update
-# @blog = Blog.find(params[:id])
+
 if @blog.update(blogs_params)
   redirect_to blogs_path,notice: "ブログを編集しました！"
 else
@@ -38,7 +37,6 @@ end
 end
 
 def destroy
-# @blog = Blog.find(params[:id])
 @blog.destroy
 redirect_to blogs_path,notice: "ブログを削除しました！"
 end
