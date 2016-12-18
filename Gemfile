@@ -13,6 +13,7 @@ gem 'rails_12factor', group: :production
 gem 'twitter-bootstrap-rails'
 gem 'rails-i18n'
 gem 'devise'
+gem 'faker'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
