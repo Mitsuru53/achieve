@@ -86,7 +86,7 @@ Rails.application.configure do
     domain: "heroku.com",
     addresses: "smtp.sendgrid.net",
     port: 587,
-    authenticate: :plain,
+    authentication: :plain,
     enable_starttls_auto: true
   }
 end
