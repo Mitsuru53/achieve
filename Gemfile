@@ -14,6 +14,8 @@ gem 'twitter-bootstrap-rails'
 gem 'rails-i18n'
 gem 'devise'
 gem 'faker'
+gem 'rails_admin'
+gem 'cancan'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
