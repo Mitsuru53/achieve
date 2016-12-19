@@ -7,12 +7,6 @@ class Ability
       can :manage, :all
     end
 
-    config.authenticate_with do
-      warden.authenticate! scope: :user
-    end
-    config.current_user_method(&:current_user)
-
-    config.authorize_with :cancan
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
