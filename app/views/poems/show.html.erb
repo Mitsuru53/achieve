@@ -1,4 +1,8 @@
- <%= @poem.title %><br />
- <%= @poem.content %>
- <%= link_to '詳細へ', poem_path %>
- 
+<div>
+  <h2><%= @poem.title %></h2>
+  <p>
+     <%= @poem.content %>
+  </p>
+</div>
+
+ <%= link_to '戻る', poems_path %>
