@@ -1,17 +1,17 @@
 <div class="container">
   <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
     <h2>会員情報修正</h2>
-    
-    <div class="alert alert-info fade in">
+
+    <!-- <div class="alert alert-info fade in">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
       <h4>課題８</h4>
       <p>ご確認をよろしくお願いいたします。</p>
     </div>
-      
-  
-    
+       -->
+
+
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  　　<%= devise_error_messages! %>
+  　　<%= f.error_messages! %>
   　　
   　　<div class="field">
   　　　  <%= f.email_field :email, autofocus: true, class:"form-control", placeholder: "メールアドレス" %>
@@ -30,7 +30,7 @@
   　　</div>
   　　
   　　<div class="field">
-    
+
     <%= f.password_field :password, autocomplete: "off",class:"form-control",placeholder:"パスワード" %>
     <% if @minimum_password_length %>
       <br />
@@ -46,20 +46,9 @@
        <%= f.submit "更新",class:"btn btn-primary btn-block" %>
       </div>
        <% end %>
-       
+
       <h3>アカウント削除</h3>
       <p><%= button_to "アカウント削除", registration_path(resource_name),class:"btn btn-danger btn-block", data: { confirm: "正気ですか！?" }, method: :delete %></p>
       <%= link_to "Back", :back %>
   </div>
 </div>
-
-
-
-  
-  
-
-  
-
-
-
-

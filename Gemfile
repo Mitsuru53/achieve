@@ -16,10 +16,13 @@ gem 'devise'
 gem 'faker'
 gem 'rails_admin'
 gem 'cancan'
+gem 'activeresource'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'pry-rails'
+  gem 'better_errors'
 end
 
 group :development do
