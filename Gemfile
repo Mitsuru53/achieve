@@ -17,6 +17,11 @@ gem 'faker'
 gem 'rails_admin'
 gem 'cancan'
 gem 'activeresource'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'carrierwave'
+gem 'rmagick'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -27,4 +32,5 @@ end
 
 group :development do
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end

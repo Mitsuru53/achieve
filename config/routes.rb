@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  # devise_for :users ここどうすればいい？
   resources :contacts, only: [:new, :create] do
     collection do
       post :confirm
@@ -18,6 +18,11 @@ Rails.application.routes.draw do
   root 'top#index'
 
   resources :poems, only: [:index,:show]
+
+  devise_for :users,controllers:{
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
