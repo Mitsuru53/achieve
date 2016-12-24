@@ -3,9 +3,10 @@
         <p><%= notice %></p>
         <h1>ブログ一覧</h1>
          <%= link_to "ブログを作成する", new_blog_path, class:'btn btn-default' %>
+         <%= raise %>
         <% @blogs.each do |blog| %>
         <div class="row">
-        
+
          <h4><strong><%= profile_img(blog.user) %><i class="fa fa-comment" aria-hidden="true" style="font-size:26px;"></i>
 <%= blog.title %></strong></h4>
          <p><%= blog.content %> by <%= blog.user.name %></p>
