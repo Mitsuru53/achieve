@@ -2,14 +2,12 @@
     <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
         <p><%= notice %></p>
         <h1>ブログ一覧</h1>
-        
          <%= link_to "ブログを作成する", new_blog_path, class:'btn btn-default' %>
-
-        <% @blogs.each do |blog| %>
-        <div class="row">
-
-         <h4><strong><%= profile_img(blog.user) %><i class="fa fa-comment" aria-hidden="true" style="font-size:26px;"></i>
-<%= blog.title %></strong></h4>
+         <% @blogs.each do |blog| %>
+          <div class="row">
+            <%= link_to blog_path(blog) do %>
+              <h4><strong><%= profile_img(blog.user) %><i class="fa fa-comment" aria-hidden="true" style="font-size:26px;"></i><%= blog.title %></strong></h4>
+             <% end %>
          <p><%= blog.content %> by <%= blog.user.name %></p>
          <%= link_to "ブログを編集する",edit_blog_path(blog.id),class:'btn btn-default btn-sm btn-success' %>
          <%= link_to "ブログを削除する",blog_path(blog.id), method: :delete, data: {confirm: '本当に削除していいですか？'},class:'btn btn-sm btn-danger'  %>
@@ -21,3 +19,6 @@
     <p><a class="move-page-top" id="move-page-top">▲</a></p>
 </div>
 <script src="https://use.fontawesome.com/ab4c6c721d.js"></script>
+
+
+<!-- test -->
