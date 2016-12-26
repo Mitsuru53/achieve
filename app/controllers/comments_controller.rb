@@ -16,13 +16,18 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-  @comment = current_user.comments.build(comment_params)
-  @blog = @comment.blog
+  @blog = Blog.find(params[:blog_id])
+  @comment = current_user.comments.find_by(blog_id: @blog.id)
+  # binding.pry
+
+
+  respond_to do |format|
   @comment.destroy
   format.html{redirect_to blog_path(@blog),notice:'コメントを削除しました。'}
   format.json{render :show, status: :deleted, location: @comment}
   format.js{render :index}
   end
+end
 
   private
   def comment_params
