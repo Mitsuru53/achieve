@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :submit_requests do
+    get 'inbox', on: :collection
+    member do
+      patch 'approve'
+      patch 'reject'
+    end
+  end
+
   resources :tasks
   get 'relationships/create'
 
@@ -9,7 +17,7 @@ Rails.application.routes.draw do
 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # devise_for :users ここどうすればいい？
+
   resources :contacts, only: [:new, :create] do
     collection do
       post :confirm

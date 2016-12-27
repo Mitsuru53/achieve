@@ -14,23 +14,29 @@
   <% f.hidden_field :user_id %>
   <% f.hidden_field :charge_id %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :deadline %><br>
-    <%= f.datetime_select :deadline %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.select :status, Task.statuses.keys %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="container">
+    <div class="row">
+        <%= f.label :タイトル %> :
+        <%= f.text_field :title %>
+    </div><br />
+
+    <div class="row">
+        <%= f.label :内容 %> :
+        <%= f.text_area :content %>
+    </div><br />
+
+    <div class="row">
+        <%= f.label :締め切り %> :
+        <%= f.datetime_select :deadline %>
+    </div><br />
+
+    <div class="row">
+        <%= f.label :状態 %> :
+        <%= f.select :status, Task.statuses.keys %>
+    </div><br />
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
   </div>
 <% end %>

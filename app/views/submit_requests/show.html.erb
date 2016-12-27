@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<h2>依頼タスク詳細</h2>
+<p>
+  <strong>ユーザー:</strong>
+  <%= @submit_request.user.name %>
+</p>
+
+<p>
+  <strong>タスク:</strong>
+  <%= @submit_request.task.title %>
+</p>
+
+<p>
+  <strong>メッセージ:</strong>
+  <%= @submit_request.message %>
+</p>
+
+<p>
+  <strong>依頼主:</strong>
+  <%= @submit_request.request_user_id %>
+</p>
+
+<p>
+  <strong>状態:</strong>
+  <%= @submit_request.status %>
+</p>
+
+<%= link_to '編集', edit_submit_request_path(@submit_request) %> |
+<%= link_to '戻る', submit_requests_path %>
