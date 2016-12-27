@@ -1,0 +1,30 @@
+<h2><%= @user.name %>さんのページ</h2>
+<div class="block col-md-10 col-sm-12 col-xs-12">
+  <div class="following">
+    <h3>フォロー</h3>
+    <% @follower.each do |follow|%>
+    <div class="followerlist">
+      <div class="followerphoto">
+        <%= profile_img(follow) %>
+      </div>
+      <div class="followername">
+        <%= link_to follow.name, user_path(follow.id) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="followed">
+    <h3>フォロワー</h3>
+    <% @followed_user.each do |followed|%>
+    <div class="followedlist">
+      <div class="followedphoto">
+        <%= profile_img(followed) %>
+      </div>
+      <div class="followedname">
+        <%= link_to followed.name, user_path(followed.id) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

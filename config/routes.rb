@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
+  root 'top#index'
+
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # devise_for :users ここどうすればいい？
   resources :contacts, only: [:new, :create] do
@@ -17,14 +24,16 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'top#index'
-
   resources :poems, only: [:index,:show]
 
   devise_for :users,controllers:{
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+  resources :users, only: [:index,:show]
+
+  resources :relationships, only: [:create, :destroy]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
