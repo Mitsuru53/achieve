@@ -9,7 +9,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'jquery-turbolinks'
-# gem 'rails_12factor', group: :production per heroku
 gem 'twitter-bootstrap-rails'
 gem 'rails-i18n'
 gem 'devise'
